@@ -22,5 +22,5 @@ app_name = 'main'
 urlpatterns = [
     path('', show_main, name='show_main'),
     path('create-mood-entry/', create_mood_entry, name='create_mood_entry'),
-    path('show-xml/', show_xml, name='show_xml'),
+    path('xml/', show_xml, name='show_xml'),
 ]
