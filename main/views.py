@@ -15,11 +15,11 @@ from django.urls import reverse
 
 @login_required(login_url='/login')
 def show_main(request):
-    mood_entries = MoodEntry.objects.all()
-
+    mood_entries = MoodEntry.objects.filter(user=request.user)
+   
     context = {
         'npm' : '2306207505',
-        'username': 'request.user.username',
+        'username': request.user.username,
         'class': 'PBP F',
         'mood_entries': mood_entries,
         'last_login': request.COOKIES['last_login'],
